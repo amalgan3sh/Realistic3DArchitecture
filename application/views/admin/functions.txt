@@ -1,0 +1,27 @@
+Key Features:
+User Management: admin_manage_user
+
+Create, update, and delete user accounts.
+Define user roles and permissions, controlling access to features and data.
+Manage user profiles, including personal information, contact details, and role assignments.
+Monitor user activity and track login history for security purposes.
+Project Management:
+
+Create, edit, and archive projects within the platform. admin_manage_project
+Assign project owners and collaborators, defining roles and responsibilities.
+Set project timelines, milestones, and deliverables, tracking progress and status updates.
+Monitor project budgets, expenses, and resource allocations, ensuring efficient project management.
+Content Management:
+
+Manage platform content, including articles, resources, and announcements. admin_manage_content
+Create and publish new content, updating existing materials as needed.
+Organize content into categories, tags, or collections for easy navigation and discovery.
+Moderate user-generated content, ensuring compliance with platform guidelines and standards.
+Analytics Dashboard:
+
+View comprehensive analytics and insights into platform usage and performance. admin_view_insights
+Track user engagement metrics, including page views, session durations, and click-through rates.
+Monitor project metrics, such as project completion rates, client satisfaction scores, and revenue generated.
+Generate reports and visualizations to analyze trends, identify opportunities for improvement, and make data-driven decisions.
+Settings:
+
