@@ -1,17 +1,6 @@
 
 
 
-
-    <!-- banner section -->
-    <section class="banner-19">
-        <div class="banner-layer">
-            <video autoplay muted loop id="myVideo">
-                <source src="<?php echo base_url('other_assets/') ?>assets/videos/video.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
-            <div class="main-content-top">
-                <div class="container">
-                    <div class="main-content">
                             <center>
         <h1><?php echo $this->session->userdata('user_id'); ?>'s PROFILE</h1>
                                 <div class="table-responsive" style="max-height: 300px; overflow-y: auto;background-color: rgba(255, 255, 255, 0.5);">
@@ -114,9 +103,4 @@
 }
 
 </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //banner section -->
+                   

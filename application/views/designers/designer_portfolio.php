@@ -1,36 +1,7 @@
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Portfolio Item</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: space-between;
-        }
-        form {
-            flex: 1;
-            margin-right: 20px; /* Adjust the margin as needed */
-        }
-        table {
-            flex: 1;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <div>
+
+    <div style="background-color: white; opacity: 0.5;">
         <h1>Add Portfolio Item</h1>
             <form action="<?php echo base_url('index.php/Onlinecontroller/designerAddPortfolio'); ?>" method="post">
         <label for="project_details">Project Details:</label><br>
@@ -66,7 +37,7 @@
     </div>
     <div>
         <h2>Portfolio Details</h2>
-        <table>
+        <table  style="background-color: white; opacity: 0.5;">
             <tr>
                 <th>Sno</th>
                 <th>Project Details</th>
@@ -99,7 +70,5 @@
                 </tr>
             <?php endif; ?>
         </table>
-    </div>
-</body>
-</html>
+  
 

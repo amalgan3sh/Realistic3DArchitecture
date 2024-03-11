@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Designer Projects</title>
-</head>
-<body>
 
-</body>
-</html>
-
-    <!-- banner section -->
-    <section class="banner-19">
-        <div class="banner-layer">
-            <video autoplay muted loop id="myVideo">
-                <source src="<?php echo base_url('other_assets/') ?>assets/videos/video.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
-            <div class="main-content-top">
-                <div class="container">
-                    <div class="main-content">
-                            <center>
         <h1>PROJECTS</h1>
         <div class="table-responsive" style="max-height: 300px; max-width: 100%; overflow-y: auto;background-color: rgba(255, 255, 255, 0.5);">
 
@@ -55,9 +33,4 @@
             <?php endif; ?>
         </table>
     </div>
-    </center>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    

@@ -113,18 +113,21 @@ class Onlinecontroller extends CI_Controller {
         $data['designer_profile'] = $this->Onlinemodel->getDesignerProfile($designer_id);
         $this->load->view('designers/designer_header');
         $this->load->view('designers/designer_manage_profile',$data);
+        $this->load->view('designers/designer_footer');
     }
     public function designerManageProject(){
         $designer_id = $this->session->userdata('user_id');
         $data['designer_project'] = $this->Onlinemodel->getDesignerProject($designer_id);
         $this->load->view('designers/designer_header');
         $this->load->view('designers/designer_manage_project',$data);
+        $this->load->view('designers/designer_footer');
     }
     public function designerPortfolio(){
         $designer_id = $this->session->userdata('user_id');
         $data['designer_portfolio'] = $this->Onlinemodel->getDesignerPortfolio($designer_id);
         $this->load->view('designers/designer_header');
         $this->load->view('designers/designer_portfolio',$data);
+         $this->load->view('designers/designer_footer');
     }
     public function designerEditProfile(){
         // Retrieve the JSON data sent from the JavaScript function
