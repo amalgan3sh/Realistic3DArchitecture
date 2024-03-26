@@ -10,7 +10,7 @@ Author URL: http://w3layouts.com
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Interior Architect an Interior Category Bootstrap Responsive Website Template | Home :: W3layouts</title>
+    <title>Realistic 3D Architecture</title>
      <!-- web fonts -->
     <link href="//fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@ Author URL: http://w3layouts.com
 <section class="w3l-bootstrap-header">
   <nav class="navbar navbar-expand-lg navbar-light py-lg-3 py-2">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><span class="fa fa-info"> -</span> Company</a>
+      <a class="navbar-brand" href="index.html"><span class="fa fa-info"> -</span> User</a>
       <!-- if logo is image enable this   
     <a class="navbar-brand" href="#index.html">
         <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -36,25 +36,16 @@ Author URL: http://w3layouts.com
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/companyHome'); ?>">Home</a>
+            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/userHome'); ?>">Home</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/userViewCompanies'); ?>">Companies</a>
+          </li>
+         <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/userViewWorkStatus'); ?>">Work Status</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/companyProjects'); ?>">Projects</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/companyViewDesigners'); ?>">Designers</a>
-          </li> -->
-         <!-- <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/companyViewArchitect'); ?>">Architect</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/companyfeedbacks'); ?>">Feedbacks</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/companyclientmanagement'); ?>">Client</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/architectLogout'); ?>">Logout</a>
+            <a class="nav-link" href="<?php echo base_url('index.php/Onlinecontroller/designerLogout'); ?>">Logout</a>
           </li>
 
 

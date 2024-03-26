@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Architect Portfolio</h1>
-    <table border="1">
+    <table border="1"  style="background-color:white;">
         <thead>
             <tr>
                 <th>Project Details</th>

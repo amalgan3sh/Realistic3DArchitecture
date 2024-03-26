@@ -8,7 +8,7 @@
 <body>
     <center>
         <h1>ARCHITECT'S</h1>
-        <table border="1">
+        <table border="1"  style="background-color:white;">
             <tr>
                 <th>S No</th>
                 <th>Username</th>
@@ -33,6 +33,7 @@
                         <td><?php echo $row->certification; ?></td>
                         <td><?php echo $row->portfolio; ?></td>
                         <td><a href="<?php echo base_url('index.php/Onlinecontroller/companyViewArchitectPortfolio?architecture_id=' . $row->architecture_id); ?>">Portfolio</a></td>
+                        <td><a href="<?php echo base_url('index.php/Onlinecontroller/companyAssignProjectToArchitect?architect_id=' . $row->architecture_id . '&project_id=' . $_GET['project_id']); ?>">Assign</a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

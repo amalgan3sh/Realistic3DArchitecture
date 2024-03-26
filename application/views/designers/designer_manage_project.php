@@ -24,6 +24,8 @@
                         <td><?php echo $row->designer_id; ?></td>
                         <td><?php echo $row->architect_id; ?></td>
                         <td><?php echo $row->status; ?></td>
+                        <td><a href="<?php echo base_url('index.php/Onlinecontroller/designerUploadDesign?project_id=' . $row->project_id) ?>">Upload design</a></td>
+
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

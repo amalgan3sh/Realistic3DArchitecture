@@ -38,6 +38,17 @@ class Onlinemodel extends CI_Model {
 		$response = $this->db->insert('company', $data);
 		return $response;
     	}
+    	if($usertype=='user'){
+    		$data = array(
+				'username' => $name,
+				'email' => $email,
+				'phone' => $phone,
+				'password' => $password
+				);
+    
+		$response = $this->db->insert('user', $data);
+		return $response;
+    	}
 		
     }
 public function loginDesigner($email, $password)
@@ -46,6 +57,20 @@ public function loginDesigner($email, $password)
     $this->db->where('email', $email);
     $this->db->where('password', $password);
     $query = $this->db->get('designers');
+    if ($query->num_rows() > 0) {
+        // Return the designer object
+        return $query->row();
+    } else {
+        return false;
+    }
+}
+
+public function loginUser($email, $password)
+{
+    // Check if there is a record in the 'designers' table with the provided email and password
+    $this->db->where('email', $email);
+    $this->db->where('password', $password);
+    $query = $this->db->get('user');
     if ($query->num_rows() > 0) {
         // Return the designer object
         return $query->row();
@@ -166,5 +191,69 @@ public function loginadmin($email, $password)
 	    $query = $this->db->get('project');
 	    return $query;
     }
+
+    public function userViewCompanies(){
+    	$this->db->where('status', 'active');
+	    $query = $this->db->get('company');
+	    return $query;
+    }
+    public function getAllUsers(){
+    	$query = $this->db->get('user');
+	    return $query;
+    }
+    public function userConfirmWorkAssignedToClient($data){
+    	$query = $this->db->insert('project',$data);
+	    return $query;
+    }
+    public  function userViewWorkStatus($user_id){
+    	$this->db->where('user_id', $user_id);
+	    $query = $this->db->get('project');
+	    return $query;
+    }
+    public function companyAcceptProject($project_id){
+    	$this->db->where('project_id', $project_id);
+	    $this->db->update('project', array('status' => 'accepted'));
+    	return true;
+    }
+    public function companyRejectProject($project_id){
+    	$this->db->where('project_id', $project_id);
+	    $this->db->update('project', array('status' => 'rejected'));
+    	return true;
+    }
+    public function companyAssignProjectToDesigner($project_id, $designer_id){
+    	$this->db->where('project_id', $project_id);
+	    $this->db->update('project', array('designer_id' => $designer_id));
+    	return true;
+    }
+    public function companyAssignProjectToArchitect($project_id, $architect_id){
+    	$this->db->where('project_id', $project_id);
+	    $this->db->update('project', array('architect_id' => $architect_id));
+    	return true;
+    }
+
+	public function designerFileUpload($design_name, $file_path_name, $project_id) {
+	    $data = array(
+	        'design_name' => $design_name,
+	        'image' => $file_path_name,
+	        'project_id' => $project_id 
+	    );
+
+	    $query = $this->db->insert('design_model', $data);
+	    return $query;
+	}
+	public function get_designs($project_id) {
+	    // Fetch data from the database
+	    $query = $this->db->get('design_model');
+	    
+	    // Return the result set as an array of objects
+	    return $query->result();
+	}
+	public function getArchitect_project(){
+		$query = $this->db->get('project');
+	    
+	    // Return the result set as an array of objects
+	    return $query;
+	}
+
 
 }

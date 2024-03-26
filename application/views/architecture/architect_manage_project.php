@@ -39,27 +39,31 @@
   <tr>
     <th>Project ID</th>
     <th>Project Name</th>
-    <th>Client</th>
-    <th>Status</th>
+    <th>Description</th>
+    <th>Company ID</th>
+    <th>Designer ID</th>
+    <th>Architect ID</th>
   </tr>
-  <tr>
-    <td>1</td>
-    <td>Project A</td>
-    <td>Client X</td>
-    <td>In Progress</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Project B</td>
-    <td>Client Y</td>
-    <td>Completed</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Project C</td>
-    <td>Client Z</td>
-    <td>On Hold</td>
-  </tr>
+     <?php if (!empty($architect_project)): ?>
+                <?php $counter = 1; ?>
+                <?php foreach ($architect_project->result() as $row): ?>
+                    <tr>
+                        <td><?php echo $counter++; ?></td> <!-- Incrementing counter -->
+                        <td><?php echo $row->project_name; ?></td>
+                        <td><?php echo $row->description; ?></td>
+                        <td><?php echo $row->company_id; ?></td>
+                        <td><?php echo $row->designer_id; ?></td>
+                        <td><?php echo $row->architect_id; ?></td>
+                        <td><?php echo $row->status; ?></td>
+                        <td><a href="<?php echo base_url('index.php/Onlinecontroller/designerUploadDesign?project_id=' . $row->project_id) ?>">Upload design</a></td>
+
+                    </tr>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <tr>
+                    <td colspan="7">No project found</td>
+                </tr>
+            <?php endif; ?>
   <!-- Add more rows as needed -->
 </table>
 

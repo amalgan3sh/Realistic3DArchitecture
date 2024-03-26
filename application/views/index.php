@@ -29,7 +29,8 @@
               <option value="admin">Admin</option>
               <option value="architecture">Architectures</option>
               <option value="designers">Designers</option>
-              <option value="companies">Building companies</option>
+              <option value="companies">Company</option>
+              <option value="user">User</option>
           </select>
         </div>
         <div class="options">

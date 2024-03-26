@@ -8,7 +8,7 @@
 <body>
     <center>
         <h1>DESIGNER'S</h1>
-        <table border="1">
+        <table border="1" style="background-color:white;">
             <tr>
                 <th>S No</th>
                 <th>Username</th>
@@ -33,6 +33,8 @@
                         <td><?php echo $row->certification; ?></td>
                         <td><?php echo $row->portfolio; ?></td>
                         <td><a href="<?php echo base_url('index.php/Onlinecontroller/companyViewDesignerPortfolio?designer_id=' . $row->designer_id); ?>">Portfolio</a></td>
+                        <td><a href="<?php echo base_url('index.php/Onlinecontroller/companyAssignProjectToDesigner?designer_id=' . $row->designer_id . '&project_id=' . $_GET['project_id']); ?>">Assign</a></td>
+
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

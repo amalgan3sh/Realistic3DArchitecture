@@ -2,7 +2,7 @@
 
 <h2>Company Feedbacks</h2>
 
-<table>
+<table  style="background-color:white;">
   <tr>
     <th>Feedback ID</th>
     <th>Client</th>

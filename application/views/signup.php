@@ -29,10 +29,11 @@
       </div>
       <div class="input-group">
           <i class="fas fa-briefcase"></i>
-          <select name="usertype" class="input-group">
+          <select name="usertype" class="form-control">
               <option value="designer">Designer</option>
               <option value="architect">Architect</option>
               <option value="company">Company</option>
+              <option value="user">User</option>
           </select>
         </div>
       <div class="input-group">
