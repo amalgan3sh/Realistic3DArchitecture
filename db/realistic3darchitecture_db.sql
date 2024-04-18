@@ -54,7 +54,7 @@ CREATE TABLE `architect` (
 /*Data for the table `architect` */
 
 insert  into `architect`(`architecture_id`,`first_name`,`last_name`,`email`,`phone`,`certification`,`portfolio`,`username`,`password`,`status`) values 
-(1,NULL,NULL,'architect@gmail.com','7845896585',NULL,NULL,'architect','architect','active');
+(1,NULL,NULL,'architect@gmail.com','1234512345',NULL,NULL,'architect','architect','active');
 
 /*Table structure for table `company` */
 
@@ -71,13 +71,12 @@ CREATE TABLE `company` (
   `password` varchar(30) DEFAULT NULL,
   `status` varchar(10) DEFAULT 'active',
   PRIMARY KEY (`company_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `company` */
 
 insert  into `company`(`company_id`,`company_name`,`email`,`phone`,`pan_number`,`gst`,`username`,`password`,`status`) values 
-(1,NULL,'company@gmail.com','7458965874',NULL,NULL,'company','company','active'),
-(2,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'active');
+(1,NULL,'company@gmail.com','7894563214',NULL,NULL,'company','company','active');
 
 /*Table structure for table `content` */
 
@@ -92,6 +91,29 @@ CREATE TABLE `content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `content` */
+
+/*Table structure for table `design_model` */
+
+DROP TABLE IF EXISTS `design_model`;
+
+CREATE TABLE `design_model` (
+  `design_id` int(11) NOT NULL AUTO_INCREMENT,
+  `design_name` varchar(100) DEFAULT NULL,
+  `image` varchar(1000) DEFAULT NULL,
+  `project_id` int(11) DEFAULT NULL,
+  `type` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`design_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `design_model` */
+
+insert  into `design_model`(`design_id`,`design_name`,`image`,`project_id`,`type`) values 
+(4,'test view','designs/pexels-sebastian-ervi-1763075.jpg',2,NULL),
+(5,'test view','designs/pexels-sebastian-ervi-17630751.jpg',2,NULL),
+(6,'project id test','designs/Screenshot_(7).png',2,NULL),
+(7,'project it test 2','designs/Screenshot_(7)1.png',NULL,NULL),
+(8,'project id test 3','designs/pexels-pixabay-46798.jpg',1,NULL),
+(9,'ahh','designs/pexels-fu-zhichao-587741.jpg',1,NULL);
 
 /*Table structure for table `designers` */
 
@@ -114,7 +136,7 @@ CREATE TABLE `designers` (
 /*Data for the table `designers` */
 
 insert  into `designers`(`designer_id`,`first_name`,`last_name`,`email`,`phone`,`certification`,`portfolio`,`username`,`password`,`status`) values 
-(1,'','ganesh','designer@gmail.com','7894563214','BCA','none','Designer','designer','active');
+(1,NULL,NULL,'designer@gmail.com','7898985658',NULL,NULL,'Designer','designer','active');
 
 /*Table structure for table `feedback` */
 
@@ -162,14 +184,9 @@ CREATE TABLE `portfolio` (
   `designer_id` int(11) DEFAULT NULL,
   `architecture_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`portfolio_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `portfolio` */
-
-insert  into `portfolio`(`portfolio_id`,`project_details`,`skills`,`education`,`experience`,`certifications`,`contact_informations`,`biography`,`additional_informations`,`designer_id`,`architecture_id`) values 
-(1,'Project A details','3D modeling, rendering, interior design','Bachelor of Architecture','5 years in architectural design firms','Autodesk Certified Professional','Email: designer@exam','I am a passionate architect with a focus on sustainable design.','Additional details about the project or the designer can go here.',1,NULL),
-(2,'Project B details','Architectural visualization, CAD drafting','Master of Architecture','10 years of experience in residential architecture','LEED Accredited Professional','Email: architect@exa','I specialize in creating functional and aesthetically pleasing spaces.','Additional details about the project or the architect can go here.',NULL,1),
-(3,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `project` */
 
@@ -179,24 +196,37 @@ CREATE TABLE `project` (
   `project_id` int(20) NOT NULL AUTO_INCREMENT,
   `project_name` varchar(30) DEFAULT NULL,
   `description` varchar(500) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
   `company_id` int(11) DEFAULT NULL,
   `designer_id` int(11) DEFAULT NULL,
   `architect_id` int(11) DEFAULT NULL,
   `status` varchar(20) DEFAULT 'pending',
   PRIMARY KEY (`project_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*Data for the table `project` */
 
-insert  into `project`(`project_id`,`project_name`,`description`,`company_id`,`designer_id`,`architect_id`,`status`) values 
-(1,'Modern Office Building','Design a sleek and contemporary office building with open floor plans, ample natural light, and eco-friendly features.',1,1,2,'pending'),
-(2,'Residential Apartment Complex','Develop a luxury apartment complex with state-of-the-art amenities, landscaped gardens, and panoramic views.',1,2,1,'pending'),
-(3,'Sustainable Community Center','Create a sustainable community center incorporating renewable energy sources, rainwater harvesting, and green spaces for recreation.',1,3,3,'pending'),
-(4,'sample','sample',1,1,1,'pending'),
-(5,'sample test','sample test',1,1,0,'pending'),
-(6,'company id test','test',1,1,0,'pending'),
-(7,'sample test','as',1,1,0,'pending'),
-(8,'ammm','aaa',1,1,0,'pending');
+insert  into `project`(`project_id`,`project_name`,`description`,`user_id`,`company_id`,`designer_id`,`architect_id`,`status`) values 
+(1,'Urban Oasis: Sustainable Commu','Urban Oasis\" is a visionary project aimed at transforming urban spaces into sustainable, vibrant community hubs. This project encompasses the construction of a multi-functional complex designed to serve as a nexus of community engagement, environmental stewardship, and economic vitality',1,1,1,1,'accepted'),
+(2,'bakery shop','1000 sqr feet bakery at kalamaserry',1,1,NULL,NULL,'accepted');
+
+/*Table structure for table `user` */
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(30) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+/*Data for the table `user` */
+
+insert  into `user`(`user_id`,`username`,`password`,`phone`,`email`) values 
+(1,'user','user','7356529545','user@gmail.com');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

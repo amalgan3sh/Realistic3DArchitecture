@@ -3,7 +3,7 @@
       
 
                   <h5> We are architects, planners &amp; designers.</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum</p>
+                  <p></p>
                   <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html"> Our Services</a>
                 </div>
               </div>
@@ -18,7 +18,7 @@
               <div class="container">
                 <div class="banner-info-bg mr-auto">
                   <h5>We Create Beautiful Home Exteriors.</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum</p>
+                  <p></p>
                   <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="contact.html"> Contact Us</a>
                 </div>
               </div>
@@ -33,7 +33,7 @@
               <div class="container">
                 <div class="banner-info-bg mr-auto">
                   <h5>Exceptional Designing For Exceptional Spaces</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum</p>
+                  <p></p>
                   <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="about.html"> About Us</a>
                 </div>
               </div>

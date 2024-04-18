@@ -1,7 +1,7 @@
 
 
                   <h5> We are architects, planners &amp; designers.</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum</p>
+                  <p></p>
                   <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html"> Our Services</a>
                 </div>
               </div>
@@ -16,7 +16,7 @@
               <div class="container">
                 <div class="banner-info-bg mr-auto">
                   <h5>We Create Beautiful Home Exteriors.</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum</p>
+                  <p></p>
                   <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="contact.html"> Contact Us</a>
                 </div>
               </div>
@@ -31,7 +31,7 @@
               <div class="container">
                 <div class="banner-info-bg mr-auto">
                   <h5>Exceptional Designing For Exceptional Spaces</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum</p>
+                  <p></p>
                   <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="about.html"> About Us</a>
                 </div>
               </div>
@@ -46,7 +46,7 @@
               <div class="container">
                 <div class="banner-info-bg mr-auto">
                   <h5>Giving Your Home a New Style Every Style</h5>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, velit recusandae eum necessitatibus blanditiis porro cum</p>
+                  <p></p>
                   <a class="btn btn-secondary btn-theme2 mt-md-5 mt-4" href="services.html">Read More</a>
                 </div>
               </div>
@@ -103,9 +103,7 @@
     <div class="container py-lg-5">
       <div class="heading text-center mx-auto mb-5">
         <h3 class="head">Build your base</h3>
-        <p class="my-3 head"> Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-        Nulla mollis dapibus nunc, ut rhoncus
-        turpis sodales quis. Integer sit amet mattis quam.</p>
+        <p class="my-3 head"> </p>
       </div>
       <div class="features-with-17-top_sur mt-5 pt-3">
         <div class="row">
@@ -116,8 +114,7 @@
               </div>
               <div class="features-with-17-left2">
                 <h6><a href="#url">Conceptual Architecture</a></h6>
-                <p> Lorem Ipsum is simply dummy text of the printing and industry.
-                  Lorem Ipsum has the industry's standard dummy text ever since the 1500s,</p>
+                <p> </p>
                   <a href="services.html" class="actionbg">Read More </a>
               </div>
             </div>
