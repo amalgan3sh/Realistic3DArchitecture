@@ -23,7 +23,7 @@
           <i class="fas fa-lock"></i>
           <input type="password" name="password" placeholder="Password" >
         </div>
-        <div class="input-group">
+        <!-- <div class="input-group">
           <i class="fas fa-briefcase"></i>
           <select placeholder="usertype" name="usertype" class="input-group">
               <option value="admin">Admin</option>
@@ -32,7 +32,7 @@
               <option value="companies">Company</option>
               <option value="user">User</option>
           </select>
-        </div>
+        </div> -->
         <div class="options">
           <label for="remember">
             <input type="checkbox" id="remember"> Remember me

@@ -24,59 +24,99 @@ class Onlinecontroller extends CI_Controller {
     }
 
     public function loginUser()
-{
-    $usertype = $this->input->post('usertype');
-    $email = $this->input->post('email');
-    $password = $this->input->post('password');
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        
+        // Define an array to hold the table names
+        $user_types = array('admin', 'architecture', 'companies', 'designers', 'user');
+        
+        // Initialize user ID and user type variables
+        $user_id = null;
+        $user_type = null;
     
-    $user_id = null;
-
-    switch ($usertype) {
-        case 'admin':
-            $user = $this->Onlinemodel->loginadmin($email, $password);
-            if ($user) {
-                $user_id = $user->admin_id; 
-                $this->adminHome();
+        // Loop through each user type
+        foreach ($user_types as $type) {
+            // Check login for each user type
+            switch ($type) {
+                case 'admin':
+                    $user = $this->Onlinemodel->loginadmin($email, $password);
+                    if ($user) {
+                        $user_id = $user->admin_id; 
+                        $user_type = 'admin';
+                    }
+                    break;
+                
+                case 'architecture':
+                    $user = $this->Onlinemodel->loginarchitect($email, $password);
+                    if ($user) {
+                        $user_id = $user->architecture_id; 
+                        $user_type = 'architecture';
+                    }
+                    break;
+                
+                case 'companies':
+                    $user = $this->Onlinemodel->logincompanies($email, $password);
+                    if ($user) {
+                        $user_id = $user->company_id; 
+                        $user_type = 'companies';
+                    }
+                    break;
+                
+                case 'designers':
+                    $user = $this->Onlinemodel->loginDesigner($email, $password);
+                    if ($user) {
+                        $user_id = $user->designer_id; 
+                        $user_type = 'designers';
+                    }
+                    break;
+                
+                case 'user':
+                    $user = $this->Onlinemodel->loginUser($email, $password);
+                    if ($user) {
+                        $user_id = $user->user_id; 
+                        $user_type = 'user';
+                    }
+                    break;
             }
-            break;
-        
-        case 'architecture':
-            $user = $this->Onlinemodel->loginarchitect($email, $password);
-            if ($user) {
-                $user_id = $user->architect_id; // Assuming the architect ID is stored in the 'architect_id' field
-                $this->architectHome();
+            
+            // If user is found, break the loop
+            if ($user_id) {
+                break;
             }
-            break;
-        
-        case 'companies':
-            $user = $this->Onlinemodel->logincompanies($email, $password);
-            if ($user) {
-                $user_id = $user->company_id; // Assuming the company ID is stored in the 'company_id' field
-                $this->companyHome();
+        }
+    
+        // Check if user is found
+        if ($user_id) {
+            // Store user ID and user type in session
+            $this->session->set_userdata('user_id', $user_id);
+            $this->session->set_userdata('user_type', $user_type);
+    
+            // Redirect based on user type
+            switch ($user_type) {
+                case 'admin':
+                    $this->adminHome();
+                    break;
+                case 'architecture':
+                    $this->architectHome();
+                    break;
+                case 'companies':
+                    $this->companyHome();
+                    break;
+                case 'designers':
+                    $this->designerHome();
+                    break;
+                case 'user':
+                    $this->userHome();
+                    break;
             }
-            break;
-        
-        case 'designers':
-            $user = $this->Onlinemodel->loginDesigner($email, $password);
-            if ($user) {
-                $user_id = $user->designer_id; // Assuming the designer ID is stored in the 'designer_id' field
-                $this->designerHome();
-            }
-            break;
-        case 'user':
-            $user = $this->Onlinemodel->loginUser($email, $password);
-            if ($user) {
-                $user_id = $user->user_id; // Assuming the designer ID is stored in the 'designer_id' field
-                $this->userHome();
-            }
-            break;
+        } else {
+            // Handle invalid login here (e.g., show error message)
+            // For example:
+            echo "Invalid email or password";
+        }
     }
-
-    // Store user ID in session if logged in
-    if ($user_id) {
-        $this->session->set_userdata('user_id', $user_id);
-    }
-}
+    
 
 
 	public function signUp(){
