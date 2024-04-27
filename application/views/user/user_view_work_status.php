@@ -26,6 +26,7 @@
                         <td><?php echo $row->description; ?></td>
                         <td><?php echo $row->company_id; ?></td>
                         <td><?php echo $row->status; ?></td>
+                        <td><a href="<?php echo base_url('index.php/Onlinecontroller/userViewDesign'); ?>">View Design</td>
                         <td><a href="<?php echo base_url('index.php/Onlinecontroller/userChat'); ?>">Chat</td>
                     </tr>
                 <?php endforeach; ?>

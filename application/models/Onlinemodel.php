@@ -140,10 +140,17 @@ public function loginadmin($email, $password)
 		return $response;
 	}
 	public function getOngoingProjectsForCompany($company_id){
-	    $this->db->where('company_id', $company_id);
-	    $query = $this->db->get('project');
-	    return $query->result();
+		$this->db->select('project.*, designers.username AS designer_name, architect.username AS architect_name');
+		$this->db->from('project');
+		$this->db->where('project.company_id', $company_id);
+		$this->db->join('designers', 'project.designer_id = designers.designer_id', 'left');
+		$this->db->join('architect', 'project.architect_id = architect.architecture_id', 'left');
+		$query = $this->db->get();
+		// echo json_encode($query->result());
+		// die();
+		return $query->result();
 	}
+	
 	public function companyViewDesignerPortfolio($designer_id){
 		$this->db->where('designer_id', $designer_id);
 	    $query = $this->db->get('portfolio');
@@ -253,6 +260,14 @@ public function loginadmin($email, $password)
 	    
 	    // Return the result set as an array of objects
 	    return $query;
+	}
+	public function user_get_designs($user_id) {
+		$this->db->select('*');
+		$this->db->from('design_model');
+		$this->db->join('project', 'design_model.project_id = project.project_id');
+		$this->db->where('project.user_id', $user_id);
+		$query = $this->db->get();
+		return $query->result(); // or $query->result_array() if you prefer associative arrays
 	}
 
 

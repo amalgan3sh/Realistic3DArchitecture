@@ -26,7 +26,7 @@
                     <td>
                         <?php if ($project->status == 'accepted') { ?>
                             <?php if (!empty($project->designer_id)) { ?>
-                                <?php echo $project->designer_id; ?>
+                                <?php echo $project->designer_name; // Assuming designer name is available in the $project object ?>
                             <?php } else { ?>
                                 <a href="<?php echo base_url('index.php/Onlinecontroller/companyViewDesigners?project_id=' . $project->project_id) ?>">Select Designer</a>
                             <?php } ?>
@@ -37,7 +37,7 @@
 
                     <td><?php if ($project->status == 'accepted') { ?>
                             <?php if (!empty($project->architect_id)) { ?>
-                                <?php echo $project->architect_id; ?>
+                                <?php echo $project->architect_name; // Assuming architect name is available in the $project object ?>
                             <?php } else { ?>
                                 <a href="<?php echo base_url('index.php/Onlinecontroller/companyViewArchitect?project_id=' . $project->project_id) ?>">Select Architect</a>
                             <?php } ?>

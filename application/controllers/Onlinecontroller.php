@@ -387,6 +387,12 @@ class Onlinecontroller extends CI_Controller {
          $data['company_id'] = $this->input->get_post('company_id');
          $data['project_name'] = $this->input->get_post('project_name');
          $data['description'] = $this->input->get_post('description');
+         $data['location'] = $this->input->get_post('location');
+         $data['start_date'] = $this->input->get_post('start_date');
+         $data['end_date'] = $this->input->get_post('end_date');
+         $data['budget'] = $this->input->get_post('budget');
+         $data['materials_needed'] = $this->input->get_post('materials_needed');
+         $data['special_requirments'] = $this->input->get_post('special_requirements');
          $data['user_id'] = $this->session->userdata('user_id');
          $response = $this->Onlinemodel->userConfirmWorkAssignedToClient($data);
          if($response==1){
@@ -498,6 +504,13 @@ class Onlinecontroller extends CI_Controller {
         $user_id = $this->session->userdata('user_id');
         $this->load->view('user/user_header');
          $this->load->view('user/user_chat');
+         $this->load->view('user/user_footer');
+    }
+    public function userViewDesign(){
+        $user_id = $this->session->userdata('user_id');
+        $data['designs'] = $this->Onlinemodel->user_get_designs($user_id); 
+        $this->load->view('user/user_header');
+         $this->load->view('user/user_view_design',$data);
          $this->load->view('user/user_footer');
     }
 

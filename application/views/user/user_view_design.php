@@ -7,42 +7,31 @@
 </head>
 <body>
     <center>
-    <div class="login-container" id="loginContainer">
-
+  <div class="login-container" id="loginContainer">
         <h1 style="color: white;">COMPANIES'S</h1>
         <table class="table" style="background-color: white; opacity: 0.5px;">
             <tr>
                 <th>#</th>
-                <th>Username</th>
-                <th>Company name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>PAN Number</th>
-                <th>GST Number</th>
-                <th></th>
+                <th>Design Name</th>
+                <th>Image</th>
             </tr>
             
-            <?php if (!empty($companies)): ?>
+            <?php if (!empty($designs)): ?>
                 <?php $counter = 1; ?>
-                <?php foreach ($companies->result() as $row): ?>
+                <?php foreach ($designs as $row): ?>
                     <tr>
                         <td><?php echo $counter++; ?></td> <!-- Incrementing counter -->
-                        <td><?php echo $row->username; ?></td>
-                        <td><?php echo $row->company_name; ?></td>
-                        <td><?php echo $row->email; ?></td>
-                        <td><?php echo $row->phone; ?></td>
-                        <td><?php echo $row->pan_number; ?></td>
-                        <td><?php echo $row->gst; ?></td>
-                        <td><a href="<?php echo base_url('index.php/Onlinecontroller/userAssignWorkToCompany?company_id=' . $row->company_id); ?>">Assign work</a></td>
+                        <td><?php echo $row->design_name; ?></td>
+                        <td><img src="<?php echo base_url($row->image); ?>" alt="Design Image" width="200" height="150"></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
                 <tr>
-                    <td colspan="7">No Companies found</td>
+                    <td colspan="7">No design found</td>
                 </tr>
             <?php endif; ?>
         </table>
-    </div>
+  </div>
     </center>
 </body>
 </html>
@@ -67,7 +56,7 @@
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   padding: 30px;
-  width: 150%;
+  width: 400px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
