@@ -29,7 +29,7 @@
         </div>
 
         <div class="msg-text">
-          Hi, welcome to  Realistic 3D Architecture! Go ahead and send me a message. 😄
+          Hi, welcome to Realistic 3D Architecture! Go ahead and send me a message. 😄
         </div>
       </div>
     </div>

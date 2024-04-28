@@ -250,6 +250,7 @@ public function loginadmin($email, $password)
 	}
 	public function get_designs($project_id) {
 	    // Fetch data from the database
+		$this->db->where('project_id',$project_id);
 	    $query = $this->db->get('design_model');
 	    
 	    // Return the result set as an array of objects

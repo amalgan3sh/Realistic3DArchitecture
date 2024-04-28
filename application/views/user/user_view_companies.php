@@ -9,8 +9,8 @@
     <center>
     <div class="login-container" id="loginContainer">
 
-        <h1 style="color: white;">COMPANIES'S</h1>
-        <table class="table" style="background-color: white; opacity: 0.5px;">
+        <h1 style="color: white;">COMPANIES</h1>
+        <table class="table" style="background-color: white; opacity: 0.7;">
             <tr>
                 <th>#</th>
                 <th>Username</th>

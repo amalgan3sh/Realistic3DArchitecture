@@ -10470,6 +10470,9 @@ button.bg-dark:focus {
   .px-xl-3 {
     padding-left: 1rem !important;
   }
+  .owl-nav.disabled {
+    display: none;
+}
 
   .p-xl-4 {
     padding: 1.5rem !important;

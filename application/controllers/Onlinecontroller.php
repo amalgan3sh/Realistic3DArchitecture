@@ -513,5 +513,10 @@ class Onlinecontroller extends CI_Controller {
          $this->load->view('user/user_view_design',$data);
          $this->load->view('user/user_footer');
     }
+    public function companyChat(){
+        $this->load->view('company/company_header');
+        $this->load->view('company/company_chat');
+        $this->load->view('company/company_footer');
+    }
 
 }
